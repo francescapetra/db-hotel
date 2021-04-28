@@ -5,7 +5,7 @@ SELECT * FROM `ospiti` WHERE `document_type` = 'CI'
 SELECT * FROM `ospiti` WHERE `date_of_birth` > '1988-12-31' ORDER BY `date_of_birth` ASC
 
 3) Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query)
-SELECT * FROM `ospiti` WHERE `date_of_birth`<= '2001-04-28' ORDER BY `date_of_birth` ASC
+SELECT * FROM `ospiti` WHERE (YEAR(NOW()) - YEAR(`date_of_birth`)) >20 ORDER BY `ospiti`.`date_of_birth` DESC
 
 4) Seleziona tutti gli ospiti il cui nome inizia con la D
 SELECT * FROM `ospiti` WHERE `name` LIKE 'D%'
